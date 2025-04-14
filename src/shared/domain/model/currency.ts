@@ -23,6 +23,6 @@ export class Currency {
     };
 
 
-    public toString = (): string => {this.code }
+    public toString = (): string => this.code
 }
 
