@@ -6,7 +6,7 @@ import {Money} from "../../../shared/domain/model/money";
 
 export type SalesOrderState = "PENDING" | "CONFIRM" | "SHIPPED" | "CANCELLED"
 
-class SalesOrder{
+export class SalesOrder{
     private readonly _customerId: string;
     private readonly _id: string;
     private readonly _items: SalesOrderItem[];
