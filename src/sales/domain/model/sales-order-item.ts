@@ -8,8 +8,10 @@ export class SalesOrderItem {
     private readonly _quantity: number;
     private readonly _unitPrice: Money;
 
-
-    constructor(orderId: string, productId: string, quantity: number, unitPrice: Money) {
+    constructor(orderId: string,
+                productId: string,
+                quantity: number,
+                unitPrice: Money) {
         this._orderId = orderId;
         this._itemId = uuidv4();
         this._productId = productId;
@@ -17,9 +19,7 @@ export class SalesOrderItem {
         this._unitPrice = unitPrice;
     }
 
-
-    public calculatePrice=():Money =>
-    this._unitPrice.multiply(this._quantity)
+    public calculatePrice = (): Money => this._unitPrice.multiply(this._quantity);
 
     public get productId(): string { return this._productId; }
 

@@ -1,4 +1,4 @@
-import {Customer} from "./sales/domain/model/customer";
+import {Customer} from "./src/domain/model/customer";
 import {Currency} from "./shared/domain/model/currency";
 import {SalesOrder} from "./sales/domain/model/sales-order";
 
@@ -13,15 +13,14 @@ try {
     realTimeSalesOrder.addItem("P002", 20, 50);
     realTimeSalesOrder.confirm();
     customer.lastOrderPrice = realTimeSalesOrder.calculateTotalPrice();
-
     console.log(`Customer: ${customer.name}`);
-    console.log(`Order Id: ${realTimeSalesOrder.id}`);
-    console.log(`Order State: ${realTimeSalesOrder.state}` );
+    console.log(`Order ID: ${realTimeSalesOrder.id}`);
+    console.log(`Order State: ${realTimeSalesOrder.state}`);
     console.log(`Total: ${customer.lastOrderPrice.format()}`);
 } catch (error) {
-    if(error instanceof Error) {
+    if (error instanceof Error) {
         console.error(`Error: ${error.message}`);
-    } else{
-        console.error("An error occurred while retrieving customer", error);
+    } else {
+        console.error("An unexpected error occurred:", error);
     }
 }
